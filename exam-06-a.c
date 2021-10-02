@@ -7,11 +7,11 @@
 int main()
 {
     int pressure[d];
-    for (i = 0; i <= d; i++)
+    for (int i = 0; i <= d; i++)
     {
         pressure[i] = min + (rand()%(max-min+1));
     }
-    for (i = 0; i <= d; i++)
+    for (int i = 0; i <= d; i++)
     {
         printf("%d\t%d", i+1, pressure[i]);
     }
