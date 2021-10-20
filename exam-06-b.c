@@ -15,7 +15,6 @@ int main()
     {
         printf("%d\t%d\n", i+1, pressure[i]);
     }
-/*    
     int d_below = 0;
     int d_above = 0;
     int d_exact = 0;
@@ -30,6 +29,5 @@ int main()
     printf("below: %d\n", d_below);
     printf("above: %d\n", d_above);
     printf("exact: %d\n", d_exact);
-*/
     return 0;
 }

@@ -1,0 +1,1 @@
+git add . | git commit -m "exam-06-a.c na 4" | git push
