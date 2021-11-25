@@ -39,11 +39,12 @@ int main()
     printf("above: %d\n", d_above);
     printf("exact: %d\n", d_exact);
 
-    printf("Delete day? Print '1' if yes, '0' if no.\n");
+    printf("Delete day?\nY/N:");
+    char YN;
     int g;
     int dm;
-    scanf("%d", &g);
-    if (g == 1)
+    scanf("%s", &YN);
+    if (YN == 'y' || YN == 'Y')
     {
         printf("Day of month:\n");
         scanf("%d", &dm);
