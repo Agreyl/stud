@@ -1,0 +1,52 @@
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main (void) {
+    srand( (unsigned)time(NULL)/2 );
+ 
+    /* узнаем размеры массива */
+    int rows, columns;
+    printf(">> ");
+    if (scanf("%d%d", &rows, &columns) != 2 || rows < 1 || columns < 1) {
+        fprintf(stderr, "Wrong size.\n");
+        return 1;
+    }
+ 
+    /* запрашиваем память под массив */
+    float ** numbers = (float**) malloc(sizeof(float *) * rows);
+    // ^^^ сначала создаем массив указателей на строки двумерного массива
+    if (numbers == NULL) {  // если память не дали
+        fprintf(stderr, "Error allocate memory.\n");    // сообщаем об ошибке
+        return 2;           // выходим с кодом ошибки
+    }
+ 
+    numbers[0] = (float *) malloc(sizeof(float) * rows*columns);
+    // ^^^ затем создаем одномерный массив для хранения данных
+    if (numbers[0] == NULL) {
+        fprintf(stderr, "Error allocate memory.\n");
+        free(numbers);      // освобождаем память, которую уже успели занять
+        return 2;
+    }
+    // и наконец, "пришиваем" соответствующие строки к указателям
+    for (size_t i = 1; i < rows; i++)
+        numbers[i] = numbers[i-1] + columns;
+ 
+    /* заполняем массив случайными: */
+    int i, k;
+    for (i = 0; i < rows; i++)
+        for (k = 0; k < columns; k++)
+            numbers[i][k] = rand() %5 + 1.0 / (1 + rand() %5);
+ 
+    /* выводим элементы массива на экран */
+    for (i = 0; i < rows; i++) {
+        for (k = 0; k < columns; k++)
+            printf("%6.2lf", numbers[i][k]);
+        puts("");
+    }
+ 
+    /* освобождаем память и выходим */
+    free(numbers[0]);
+    free(numbers);
+    return 0;
+}
