@@ -41,11 +41,11 @@ int main()
     printf("above: %d\n", d_above);
     printf("exact: %d\n", d_exact);
 
-    printf("Delete day? Print '1' if yes, '0' if no.\n");
-    int g;
+    printf("Delete day?\nY/N:");
+    char YN;
     int dm;
-    scanf("%d", &g);
-    if (g == 1)
+    scanf("%s", &YN);
+    if (YN == 'y' || YN == 'Y')
     {
         printf("Day of month:\n");
         scanf("%d", &dm);
@@ -67,10 +67,10 @@ int main()
 
     }
 
-    printf("Sort days? Print '1' if yes, '0' if no.\n");
+    printf("Sort days?\nY/N:");
     int s;
-    scanf("%d", &s);
-    if (s == 1)
+    scanf("%s", &YN);
+    if (YN == 'y' || YN == 'Y')
     {
 
         for (int i = 0; i < d - 1; i++)
