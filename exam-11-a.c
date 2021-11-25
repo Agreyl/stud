@@ -74,7 +74,6 @@ int main()
 	{
 		if (subj_avgmark[i].avg_mark <= subj_avgmark[worse_subj - 1].avg_mark) worse_subj = subj_avgmark[i].subject;
 		
-
 	}
 //	printf("Worse subject: %d", worse_subj);
 
