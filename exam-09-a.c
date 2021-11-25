@@ -19,7 +19,7 @@ int main()
 	for (int i = 0; i < days; i++)
 	{
 		value[i].value = rates_min + ((rates_max - rates_min) * rand() / RAND_MAX);
-		value[i].day = i - 1;
+		value[i].day = i + 1;
 	}
 
 	printf("|\tday\t|\t$\t|\n");
