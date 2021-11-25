@@ -41,7 +41,6 @@ int main()
 
     printf("Delete day?\nY/N:");
     char YN;
-    int g;
     int dm;
     scanf("%s", &YN);
     if (YN == 'y' || YN == 'Y')
